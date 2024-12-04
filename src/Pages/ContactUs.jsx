@@ -9,6 +9,7 @@ import FAQ from "../assets/main/Frame 9 (1).png";
 import ContactBG from "../assets/Contact us/Conatct BG.png";
 
 const ContactUs = () => {
+
   const [formData, setFormData] = useState({
     userName: "",
     email: "",
@@ -87,6 +88,275 @@ const ContactUs = () => {
     }
   };
 
+  const platforms = [
+    "Google",
+    "Bing",
+    "Other Search Engine",
+    "Facebook",
+    "Instagram",
+    "Twitter",
+    "LinkedIn",
+    "Word of Mouth",
+    "Online Ads (e.g., Google Ads)",
+    "Conference",
+    "Current Customer Referral",
+    "Previous Purchase",
+    "News Article",
+    "Blog Post"
+  ];
+
+  
+    const countries=[
+      "Afghanistan",
+      "Aland",
+      "Albania",
+      "Algeria",
+      "American Samoa",
+      "Andorra",
+      "Angola",
+      "Anguilla",
+      "Antigua and Barbuda",
+      "Argentina",
+      "Armenia",
+      "Aruba",
+      "Australia",
+      "Austria",
+      "Azerbaijan",
+      "Bahamas",
+      "Bahrain",
+      "Bangladesh",
+      "Barbados",
+      "Belarus",
+      "Belgium",
+      "Belize",
+      "Benin",
+      "Bermuda",
+      "Bhutan",
+      "Bolivia",
+      "Bosnia and Herzegovina",
+      "Botswana",
+      "Brazil",
+      "British Antarctic Territory",
+      "Brunei",
+      "Bulgaria",
+      "Burkina Faso",
+      "Burundi",
+      "Cambodia",
+      "Cameroon",
+      "Canada",
+      "Cape Verde",
+      "Cayman Islands",
+      "Central African Republic",
+      "Chad",
+      "Chile",
+      "China",
+      "Christmas Island",
+      "Cocos (Keeling) Island",
+      "Colombia",
+      "Comoros",
+      "Congo (Brazzaville)",
+      "Congo, Democratic Republic",
+      "Cook Islands",
+      "Costa Rica",
+      "Cote d'Ivoire (Ivory Coast)",
+      "Croatia",
+      "Cuba",
+      "Cyprus",
+      "Czech Republic",
+      "Denmark",
+      "Djibouti",
+      "Dominica",
+      "Dominican Republic",
+      "East Timor",
+      "Ecuador",
+      "Egypt",
+      "El Salvador",
+      "Equatorial Guinea",
+      "Eritrea",
+      "Estonia",
+      "Ethiopia",
+      "Falkland Islands",
+      "Faroe Islands",
+      "Fiji",
+      "Finland",
+      "France",
+      "French Guiana",
+      "French Polynesia",
+      "French Southern and Antarctic Territories",
+      "Gabon",
+      "Gambia",
+      "Georgia",
+      "Germany",
+      "Ghana",
+      "Gibraltar",
+      "Greece",
+      "Greenland",
+      "Grenada",
+      "Guadeloupe",
+      "Guam",
+      "Guatemala",
+      "Guernsey",
+      "Guinea",
+      "Guinea Bissau",
+      "Guyana",
+      "Haiti",
+      "Heard and McDonald Islands",
+      "Honduras",
+      "Hong Kong",
+      "Hungary",
+      "Iceland",
+      "India",
+      "Indonesia",
+      "Iran",
+      "Iraq",
+      "Ireland",
+      "Israel",
+      "Italy",
+      "Jamaica",
+      "Japan",
+      "Jersey",
+      "Jordan",
+      "Kazakhstan",
+      "Kenya",
+      "Kiribati",
+      "Korea, North",
+      "Korea, South",
+      "Kuwait",
+      "Kyrgyzstan",
+      "Laos",
+      "Latvia",
+      "Lebanon",
+      "Lesotho",
+      "Liberia",
+      "Libya",
+      "Liechtenstein",
+      "Lithuania",
+      "Luxembourg",
+      "Macau",
+      "North Macedonia",
+      "Madagascar",
+      "Malawi",
+      "Malaysia",
+      "Maldives",
+      "Mali",
+      "Malta",
+      "Isle of Man",
+      "Marshall Islands",
+      "Mauritania",
+      "Mauritius",
+      "Martinique",
+      "Mayotte",
+      "Mexico",
+      "Micronesia",
+      "Moldova",
+      "Monaco",
+      "Mongolia",
+      "Montenegro",
+      "Montserrat",
+      "Morocco",
+      "Mozambique",
+      "Myanmar",
+      "Namibia",
+      "Nauru",
+      "Nepal",
+      "Bonaire, Sint Eustatius and Saba",
+      "Netherlands",
+      "New Caledonia",
+      "New Zealand",
+      "Nicaragua",
+      "Niger",
+      "Nigeria",
+      "Niue",
+      "Norfolk Island",
+      "Northern Mariana Islands",
+      "Norway",
+      "Oman",
+      "Pakistan",
+      "Palau",
+      "Palestine",
+      "Panama",
+      "Papua New Guinea",
+      "Paraguay",
+      "Peru",
+      "Philippines",
+      "Pitcairn Islands",
+      "Poland",
+      "Portugal",
+      "Puerto Rico",
+      "Qatar",
+      "Reunion",
+      "Romania",
+      "Russia",
+      "Rwanda",
+      "Saint Barthelemy",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Pierre and Miquelon",
+      "Saint Vincent and the Grenadines",
+      "Saint Martin",
+      "Samoa",
+      "San Marino",
+      "Sao Tome and Principe",
+      "Saudi Arabia",
+      "Senegal",
+      "Serbia",
+      "Seychelles",
+      "Sierra Leone",
+      "Singapore",
+      "Slovakia",
+      "Slovenia",
+      "Solomon Islands",
+      "Somalia",
+      "South Africa",
+      "South Georgia and the South Sandwich Islands",
+      "South Sudan",
+      "Spain",
+      "Sri Lanka",
+      "Sudan",
+      "Suriname",
+      "Sweden",
+      "Eswatini",
+      "Switzerland",
+      "Svalbard and Jan Mayen",
+      "Syria",
+      "Taiwan",
+      "Tajikistan",
+      "Tanzania",
+      "Thailand",
+      "Togo",
+      "Tokelau",
+      "Tonga",
+      "Trinidad and Tobago",
+      "Tunisia",
+      "Turkey",
+      "Turkmenistan",
+      "Turks and Caicos Islands",
+      "Tuvalu",
+      "Uganda",
+      "Ukraine",
+      "United Arab Emirates",
+      "United Kingdom",
+      "United States of America",
+      "United States Minor Outlying Islands",
+      "Uruguay",
+      "Uzbekistan",
+      "Vanuatu",
+      "Vatican",
+      "Venezuela",
+      "Vietnam",
+      "British Virgin Islands",
+      "U.S. Virgin Islands",
+      "Wallis and Futuna",
+      "Yemen",
+      "Zambia",
+      "Zimbabwe",
+      "Kosovo",
+      "Curacao",
+      "Sint Maarten"
+    ]
+  
+  
+
   return (
     <section className="bg-white py-10 px-6 md:px-12">
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
@@ -133,7 +403,7 @@ const ContactUs = () => {
               <li className="flex items-center">
                 <img src={Mail} className="w-12 h-12" alt="Mail Icon" />
                 <span className="ml-4 text-white">
-                  info@fertivuesolutions.com
+                support@fertivue.com
                 </span>
               </li>
               <li className="flex items-center">
@@ -202,10 +472,12 @@ const ContactUs = () => {
                     onChange={handleChange}
                     className="mt-1 p-3 w-full border rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"
                   >
-                    <option>Select country</option>
-                    <option>USA</option>
-                    <option>India</option>
-                    <option>UK</option>
+                    <option value="">Select country</option>
+                    {countries.map((country, index) => (
+                      <option key={index} value={country}>
+                        {country}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -215,16 +487,18 @@ const ContactUs = () => {
                   How did you find us?
                 </label>
                 <select
-                  name="platform"
-                  value={formData.platform}
-                  onChange={handleChange}
-                  className="mt-1 p-3 w-full border rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                >
-                  <option>Select platform</option>
-                  <option>Google</option>
-                  <option>Social Media</option>
-                  <option>Referral</option>
-                </select>
+                name="platform"
+                value={formData.platform}
+                onChange={handleChange}
+                className="mt-1 p-3 w-full border rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"
+              >
+                <option value="">Select platform</option>
+                {platforms.map((platform, index) => (
+                  <option key={index} value={platform}>
+                    {platform}
+                  </option>
+                ))}
+              </select>
               </div>
 
               <div className="mt-6">

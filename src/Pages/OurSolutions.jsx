@@ -60,16 +60,17 @@ const OurSolutions = () => {
       <div className="container mx-auto px-6 text-center">
         <header className="mb-12">
           <div className="flex justify-center items-center">
-            <img src={FAQ} alt="FAQ" className="w-19 h-8" />
+            <img src={FAQ} alt="FAQ" className="w-19 h-20" />
           </div>
-          <h2 className="mt-2 text-3xl font-bold text-gray-800">
+          <h2 className="mt-8 text-3xl font-bold text-gray-800">
             Solutions That Empower Clinics
           </h2>
           <p className="mt-4 text-[#9E9E9E] text-sm md:text-base max-w-2xl mx-auto">
             Streamline operations and enhance patient care with tools built for IVF success.
           </p>
         </header>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-6 "
+        style={{ paddingLeft: '10%',paddingRight: '10%' }}>
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
@@ -79,15 +80,12 @@ const OurSolutions = () => {
               whileHover="hover"
               initial="rest"
               animate={activeIndex === index ? "hover" : "rest"}
-              onClick={() => toggleCard(index)}
-            >
-              <motion.div
-                className="absolute inset-0 flex flex-col justify-center items-center p-6"
+              onClick={() => toggleCard(index)}>
+              <motion.div className="absolute inset-0 flex flex-col justify-center items-center p-6"
                 variants={{
                   rest: { y: 0, opacity: 1 },
                   hover: { y: -20, opacity: 0 },
-                }}
-              >
+                }}>
                 <div className="text-teal-500 mb-4">
                   <img src={solution.icon} alt={solution.title} className="w-16 h-16" />
                 </div>
@@ -95,13 +93,12 @@ const OurSolutions = () => {
                   {solution.title}
                 </h4>
               </motion.div>
-              <motion.div
-                className="absolute inset-0 flex flex-col justify-center items-center bg-white p-6 text-center opacity-0"
+              <motion.div className="absolute inset-0 flex flex-col justify-center items-center
+               bg-white p-6 text-center opacity-0"
                 variants={{
                   rest: { opacity: 0, y: 20 },
                   hover: { opacity: 1, y: 0 },
-                }}
-              >
+                }}>
                 <div className="text-teal-500 mb-2">
                   <img src={solution.icon} alt={solution.title} className="w-16 h-16" />
                 </div>

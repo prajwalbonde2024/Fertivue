@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../../assets/fertivue logo-06.png';
+import Logo from '../../assets/fertivue logo final.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Sidebar from './Sidebar';
 
